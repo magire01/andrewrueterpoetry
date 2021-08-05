@@ -1,0 +1,11 @@
+.carousel-outer .carousel .slide {
+    background-color: rgba(76, 175, 80, 0);
+}
+
+.carousel-status {
+    display: none;
+}
+
+.control-dots {
+    display: none;
+}

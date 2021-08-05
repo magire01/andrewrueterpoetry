@@ -1,0 +1,87 @@
+
+{
+    "data": [
+        {
+            "number": 0,
+            "title": "Spring Breakers",
+            "img": "https://upload.wikimedia.org/wikipedia/en/a/ae/Spring_Breakers_poster.jpg",
+            "year": "2012",
+            "datePosted": "9/20",
+            "director": "Directed by Harmony Korine",
+            "summary": "A group of friends turn to crime, violence, and debauchery for their spring break.",
+            "relatability": "the dreamlike atmosphere and storytelling diminished the relation slightly. I've never been a part of spring break culture and I'm pretty sure I wouldn't have fit in/been accepted but this movie helped me understand it. The characters are shockingly well developed considering how over-the-top their actions can be. Shows the humanity behind a personality we might be inclined to ignore. Covers themes we can all relate to like adolescence, individuality, and existentialism in a unique manner.",
+            "relatabilityScore": "8.5/10",
+            "execution": "the quick editing, use of close-ups, and colorful visual aesthetic give the movie a dreamlike atmosphere. The acting was serviceable; a bit too raw and subdued but I feel like Harmony Korine wanted it that way. The song selection and score appealed to my musical tastes with an energetic EDM theme.",
+            "executionScore": "9.5/10",
+            "context": "very interesting storytelling. The elements the movie chooses to focus on turn what could be a typical crime thriller plot into a more experiential impressionistic character-driven story. Bold and interesting choices like the protagonist leaving midway through keep the story fresh and unpredictable. The quick pacing keeps the runtime short and helps establish the atmosphere.",
+            "contextScore": "10/10",
+            "subtext": "I'm not sure I completely understood this film. Seemed to show how far people, especially youth, will go to push away reality, adolescence, and mediocrity. Shows the existential fears of adolescence and the desperation it creates in people. Showed the appeal and unsustainability of the criminal adrenaline seeking lifestyle. Also served as an interesting commentary on capitalism. All of these things effect us during our youth and shape us into the people we are.",
+            "subtextScore": "8.5/10",
+            "emotion": "the trashy unlikeability of the characters dampened the weight of their tragedy despite the humanity they're given. Although the question of what the characters deserve is conflicting in itself. The movie explores a wide range of emotions; the voice-over alone could be hilarious or profound or both at the same time. James Franco is super entertaining and should be commended for creating such a ridiculous yet interesting character.",
+            "emotionScore": "7.5/10",
+            "overAllRating": "88",
+            "song": "Hustle - Antiserum and Mayhem"
+
+        },
+        {
+            "number": 1,
+            "title": "Pink Flamingos",
+            "img": "https://upload.wikimedia.org/wikipedia/en/5/50/Pink_Flamingos_%281972%29.jpg",
+            "year": "1972",
+            "datePosted": "9/20",
+            "director": "Directed by John Waters",
+            "summary": "Notorious criminal underground legend Divine fights to maintain her title of Filthiest Person Alive.",
+            "relatability": "the raunchy and surreal absurdity diminishes the relation greatly. The message of the movie is somewhat ironic and tongue-in-cheek. None of the characters are liekable but they are broadly relatable in the sense that we all have things that make us different that might be looked down on yet we should still feel pride and dignity.",
+            "relatabilityScore": "2/10",
+            "execution": "the lack of budget is apparent in the filmmaking but Waters did a good job of embracing that by using it to serve the aesthetic and subject matter. You can see a clear influence on later great low budget films like Gummo and Tangerine. The acting is bad but that adds to the quirky offbeat quality of the movie. The cinematography is appealingly trashy and some of the visuals are hauntingly disturbing in a disgusting manner.",
+            "executionScore": "8/10",
+            "context": "pretty funny little story regarding a fight for superiority. Like a disgusting Hatfields and McCoys. The plot is merely a framework to hang weird and gross shit on and it accomplished that.",
+            "contextScore": "8/10",
+            "subtext": "kind of interesting movie. I know in the trans community an egg refers to someone who hasn't realized they're trans yet but it can also more broadly mean someone who hasn't come out of their shell. The grandmother loves eggs and eats them in a gluttonous manner in her crib. So she's a fat baby who married an egg man. Seems like there might be something there, probably just to say Divine's family wasn't supportive, which seems apparent through her actions. Otherwise Divine's ideology seems like an embracement of the criticisms society might have for her more natural inclinations. Like society calls her disgusting so she gets back at it by showing them how disgusting it can get. Divine killing the other filthy people and the police seemed like a statement on her individuality and agency.",
+            "subtextScore": "7/10",
+            "emotion": "if you have a weak stomach for gross or sexual content I would highly recommend not watching this film. If you're into watching the weirdest most fucked up shit you can find this is a must watch. Very disturbing and grotesque content that had a shocking and haunting effect. The range of emotions is limited to comedy and nastiness but delivers heavily in those categories.",
+            "emotionScore": "6.5/10",
+            "overAllRating": "58",
+            "song": "Freak Like Me - Halestorm"
+
+        },
+        {
+            "number": 2,
+            "title": "Fifty Shades of Grey",
+            "img": "https://upload.wikimedia.org/wikipedia/en/5/5e/50ShadesofGreyCoverArt.jpg",
+            "year": "2015",
+            "datePosted": "8/20",
+            "director": "Directed by Sam Taylor-Johnson",
+            "summary": "A timid woman struggles with a powerful businessman's cold and controlling attitude towards relationships.",
+            "relatability": "the ridiculous amount of tropes and clichés hurt the relatability. The rich person fantasy world didn't really connect with me. The insecurity of just being used for sex is definitely relatable. The idea that women should be subservient to men is unfortunately still culturally relevant and what makes this issue so delicate. The shame Christian Grey feels over his sexuality is relatable.",
+            "relatabilityScore": "5.5/10",
+            "execution": "great score utilizing electronic pop elements could be a bit heavy handed and therefore corny at a few points. The acting was pretty good considering what they had to work with.",
+            "executionScore": "7.5/10",
+            "context": "pretty simple love story. Can be too melodramatic and cliché at some points. The ending was abrupt and underwhelming.",
+            "contextScore": "3.5/10",
+            "subtext": "displayed a moral grey area between a supportive and abusive relationship. The relationship seems abusive at first glance but is based around compassion and consent. Then the audience is left to wonder whether it's genuine or not. The rich/poor dynamic between the two adds another layer of moral grey area. It was interesting considering whether the relationship was beneficial or productive to either of them. Unfortunately the movie plays more towards the romantic aspects of their relationship rather than its concerning ambiguities.",
+            "subtextScore": "7.5/10",
+            "emotion": "kind of boring. The romance is too cliché to be romantic and the S&M elements come off as pretty tame. Not much comedy or heavy drama although I couldn't stop laughing when the main character introduced herself as Anastasia Steele.",
+            "emotionScore": "3/10",
+            "overAllRating": "54",
+            "song": "Closer - Nine Inch Nails"
+
+        },
+        {
+            "number": 3,
+            "title": "Hamilton",
+            "img": "https://upload.wikimedia.org/wikipedia/en/c/c3/Hamilton_Disney%2B_poster_2020.jpg"
+        },
+        {
+            "number": 4,
+            "title": "Inside",
+            "img": "https://upload.wikimedia.org/wikipedia/en/e/e1/Bo_Burnham_-_Inside.jpg"
+        },
+        {
+            "number": 5,
+            "title": "The Silence of the Lambs",
+            "img": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg"
+        }
+    ]
+        
+}
