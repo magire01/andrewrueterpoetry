@@ -10,8 +10,8 @@ import Icy from './SliderItems/Icy';
 const Slider = () => {
 
   const sliderStyle = {
-    height: "auto",
-    width: "auto",
+    height: 300,
+    width: "auto"
   }
 
   return (

@@ -6,9 +6,9 @@ const FeaturedPoems = () => {
         background: {
             backgroundColor: "black",
             color: "white",
-            paddingTop: "20%",
-            paddingBottom: "20%",
-            height: "auto",
+            paddingTop: "2%",
+            paddingBottom: "2",
+            height: "100%",
             width: "auto"
         }
     }

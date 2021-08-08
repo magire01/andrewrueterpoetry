@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home';
 import Slider from "./components/SliderComp/Slider";
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
   const style = {
     background: {
       backgroundColor: "black",
-      paddingTop: "10%",
-      paddingBottom: "10%",
+      paddingTop: "5%",
+      paddingBottom: "5%",
       paddingLeft: "5%",
       paddingRight: "5%"
     },
