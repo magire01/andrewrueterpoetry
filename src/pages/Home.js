@@ -4,7 +4,7 @@ import Poems from "./Poems";
 import Films from "./Films";
 import Contact from "./Contact";
 
-const Home = () => {
+const Home = (props) => {
     const [pageState, setPageState] = useState("Poems")
 
     const style = {
@@ -32,7 +32,7 @@ const Home = () => {
                     </Paper>
                     <Container>
                         <Grid container>
-                            <Poems />
+                            <Poems page={props.page}/>
                         </Grid>
                     </Container>
                 </div>

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import './App.css';
 import Home from './pages/Home';
 import Slider from "./components/SliderComp/Slider";
@@ -5,6 +6,8 @@ import { Grid, Typography } from "@material-ui/core";
 
 
 function App() {
+
+  const [showPage, setShowPage] = useState("home");
 
   const style = {
     background: {
@@ -21,7 +24,6 @@ function App() {
       color: "red"
     }
   }
-
   return (
     <div>
       <Grid container style={style.background}>
@@ -29,11 +31,10 @@ function App() {
           <Typography variant="h2" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
         </Grid>
         <Grid item xs="12" md="6">
-          <Slider />
+          <Slider onChange={value => setShowPage(value)}/>
         </Grid>
       </Grid>
-      
-      <Home />
+      <Home page={showPage}/>
     </div>
   );
 }

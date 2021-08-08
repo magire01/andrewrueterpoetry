@@ -30,7 +30,6 @@ const FilmCard = (props) => {
                 <img src={props.info.img} style={style.img}/>
                 <Typography variant="subtitle1"> {props.info.title} </Typography>
             </CardMedia>
-            
         </CardActionArea>
     </Card>
     <Dialog
