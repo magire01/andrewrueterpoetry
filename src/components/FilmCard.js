@@ -7,6 +7,10 @@ const FilmCard = (props) => {
         img: {
             height: 400,
             width: "auto"
+        },
+        card: {
+            height:"auto",
+            width: "70%"
         }
     }
 
@@ -24,7 +28,7 @@ const FilmCard = (props) => {
 
     return (
     <>
-    <Card onClick={handleClickOpen}>
+    <Card onClick={handleClickOpen} style={style.card}>
         <CardActionArea>
             <CardMedia>
                 <img src={props.info.img} style={style.img}/>

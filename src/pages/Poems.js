@@ -36,7 +36,7 @@ const Poems = (props) => {
                 alignItems="center"
                 spacing={10}
                 >
-                <Grid item md={8} xs={12}>
+                <Grid item md={9} xs={12}>
                     <FormControl>
                         <Select
                         value={filter}
@@ -48,7 +48,7 @@ const Poems = (props) => {
                     </FormControl>
                 </Grid>
                 {FeaturePoemAPI.data.map(film => (
-                <Grid item md={8} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
+                <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
                     ))}
             </Grid>
         )
@@ -61,7 +61,7 @@ const Poems = (props) => {
                 alignItems="center"
                 spacing={10}
                 >
-                <Grid item md={8} xs={12}>
+                <Grid item md={9} xs={12}>
                     <FormControl>
                         <Select
                         value={filter}
@@ -74,7 +74,7 @@ const Poems = (props) => {
                     </FormControl>
                 </Grid>
                 {PoemAPI.data.map(film => (
-                <Grid item md={8} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
+                <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
                     ))}
             </Grid>
         )
