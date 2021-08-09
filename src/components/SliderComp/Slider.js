@@ -6,12 +6,14 @@ import "./slider.css"
 import FeaturedPoems from './SliderItems/FeaturedPoems';
 import NewFilms from './SliderItems/NewFilms';
 import Icy from './SliderItems/Icy';
+import Patreon from "./SliderItems/Patreon";
 
 const Slider = (props) => {
   const [sliderSelect, setSliderSelect] = useState("Home")
   const sliderStyle = {
     height: 300,
-    width: "auto"
+    width: "auto",
+    paddingTop: "10%"
   }
 
   useEffect(() => {
@@ -25,10 +27,7 @@ const Slider = (props) => {
     <div className="carousel-outer">
       <Carousel infiniteLoop autoPlay="true" interval="8000" swipeable="true" showThumbs={false} showArrows={false}>
           <div style={sliderStyle}> 
-            <FeaturedPoems onChange={value => setSliderSelect(value)}/>
-          </div>
-          <div style={sliderStyle}> 
-            <NewFilms onChange={value => setSliderSelect(value)}/>
+            <Patreon />
           </div>
           <div style={sliderStyle}> 
             <Icy />

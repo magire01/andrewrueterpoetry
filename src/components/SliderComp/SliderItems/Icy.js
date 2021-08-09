@@ -1,7 +1,7 @@
 import React from "react";
 import icyimg from "../../../assets/icyrueter.png"
 import amazonimg from "../../../assets/amazonlogo.png"
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, Card, CardActionArea, CardMedia, Typography } from "@material-ui/core";
 
 const Icy = () => {
 
@@ -24,16 +24,21 @@ const Icy = () => {
         }
     }
     return (
-        <Grid container direction="row" alignItems="Center" justify="center" style={style.background}>
-            <Grid item md={12} xs={12}>
-                <img style={style.img} src={icyimg} />
-            </Grid>
-            <Grid item md={12} xs={12}>
-                <a href="https://www.amazon.com/Icy-Andrew-Rueter-ebook/dp/B07VDLZT9Y" target="_blank">
-                    <img style={style.button} src={amazonimg} />
-                </a>
-            </Grid>
-        </Grid>
+        <Card style={style.background}>
+            <CardActionArea>
+                <CardMedia>
+                    <Grid container direction="row" alignItems="center" justifyContent="center">
+                        <Grid item md={12} xs={12}>
+                            <img style={style.img} src={icyimg} />
+                        </Grid>
+                        <Grid item md={12} xs={12}>
+                            <img style={style.button} src={amazonimg} />
+                        </Grid>
+                    </Grid>
+                </CardMedia>
+            </CardActionArea>
+        </Card>
+                
     )
 }
 

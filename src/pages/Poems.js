@@ -17,7 +17,6 @@ const Poems = (props) => {
             width: "auto"
         }
     }
-
     useEffect(() => {
         setFilter(filter)
     },[filter])

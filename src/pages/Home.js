@@ -49,7 +49,7 @@ const Home = (props) => {
                     </Paper>
                     <Container>
                         <Grid container>
-                            <Films />
+                            <Films page={props.page} />
                         </Grid>
                     </Container>
                 </div>

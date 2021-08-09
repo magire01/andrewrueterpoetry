@@ -7,18 +7,20 @@ import { Grid, Typography } from "@material-ui/core";
 
 function App() {
 
-  const [showPage, setShowPage] = useState("home");
+  const [showPage, setShowPage] = useState("all");
 
   const style = {
     background: {
       backgroundColor: "black",
-      paddingTop: "5%",
       paddingBottom: "5%",
       paddingLeft: "5%",
       paddingRight: "5%"
     },
     font: {
-      color: "white"
+      color: "white",
+      paddingTop: "15%",
+      marginLeft: "5%",
+      marginRight: "5%"
     },
     poetry: {
       color: "red"
@@ -26,9 +28,9 @@ function App() {
   }
   return (
     <div>
-      <Grid container style={style.background}>
-        <Grid item xs="12" md="6">
-          <Typography variant="h2" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
+      <Grid container alignItems="center" justifyContent="center" style={style.background}>
+        <Grid item xs="7" md="6">
+          <Typography align="center" variant="h2" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
         </Grid>
         <Grid item xs="12" md="6">
           <Slider onChange={value => setShowPage(value)}/>
