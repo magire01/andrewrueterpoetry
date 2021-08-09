@@ -11,9 +11,8 @@ import Patreon from "./SliderItems/Patreon";
 const Slider = (props) => {
   const [sliderSelect, setSliderSelect] = useState("Home")
   const sliderStyle = {
-    height: 300,
-    width: "auto",
-    paddingTop: "10%"
+    height: 350,
+    width: "auto"
   }
 
   useEffect(() => {
@@ -25,7 +24,7 @@ const Slider = (props) => {
 
   return (
     <div className="carousel-outer">
-      <Carousel infiniteLoop autoPlay="true" interval="8000" swipeable="true" showThumbs={false} showArrows={false}>
+      <Carousel infiniteLoop autoPlay="true" interval="8000" swipeable="true" showThumbs={true} showArrows={false}>
           <div style={sliderStyle}> 
             <Patreon />
           </div>

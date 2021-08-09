@@ -8,40 +8,35 @@ const Patreon = () => {
         background: {
             backgroundColor: "black",
             color: "white",
-            paddingTop: "10%",
-            paddingBottom: "10%",
             height: "100%",
-            width: "auto"
+            width: "auto",
+            paddingTop: "10%"
         },
         img: {
             height: 100,
             width: "auto",
+            paddingTop: "2%"
         },
         button: {
             height: 70,
             width: "auto"
+        },
+        text: {
+            paddingTop: 5
         }
     }
     return (
-        // <Grid container direction="row" alignItems="Center" justify="center" style={style.background}>
-        //     <Grid item md={12} xs={12}>
-        //         <a href="https://www.patreon.com/brand" target="_blank">
-        //             <img style={style.img} src={patreonimg} />
-        //         </a>
-        //     </Grid>
-        //     <Grid item md={12} xs={12}>
-                
-        //     </Grid>
-        // </Grid>
-
-        <Card style={style.background}>
-            <CardActionArea>
-                <CardMedia>
-                    <img style={style.img}src={patreonimg} />
-                    <Typography variant="h5">Support me on Patreon</Typography>
-                </CardMedia>
-            </CardActionArea>
-        </Card>
+        
+        <a href="https://www.patreon.com/brand" target="_blank">
+            <Card style={style.background}>
+                <CardActionArea>
+                    <CardMedia>
+                        <img style={style.img}src={patreonimg} />
+                        <Typography style={style.text} variant="h5">Support me on Patreon</Typography>
+                    </CardMedia>
+                </CardActionArea>
+            </Card>
+        </a>
     )
 }
 

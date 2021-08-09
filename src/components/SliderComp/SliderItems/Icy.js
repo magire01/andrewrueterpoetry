@@ -9,35 +9,43 @@ const Icy = () => {
         background: {
             backgroundColor: "black",
             color: "white",
-            paddingTop: "2%",
-            paddingBottom: "2",
+            paddingTop: "5%",
+            paddingBottom: "2%",
             height: "100%",
             width: "auto"
         },
         img: {
             height: 200,
-            width: "auto"
+            width: "auto",
+            paddingTop: "2%"
         },
         button: {
-            height: 70,
-            width: "auto"
+            height: 80,
+            width: "auto",
+            paddingTop: 5
+
         }
     }
     return (
-        <Card style={style.background}>
-            <CardActionArea>
-                <CardMedia>
-                    <Grid container direction="row" alignItems="center" justifyContent="center">
-                        <Grid item md={12} xs={12}>
-                            <img style={style.img} src={icyimg} />
+        <a href="https://www.amazon.com/Icy-Andrew-Rueter-ebook/dp/B07VDLZT9Y" target="_blank">
+            <Card style={style.background}>
+                <CardActionArea>
+                    <CardMedia>
+                        <Grid container direction="row" alignItems="center" justifyContent="center">
+                            <Grid item md={12} xs={12}>
+                                <Typography variant="h6" align="center">Download 'Icy' on Amazon</Typography>
+                            </Grid>
+                            <Grid item md={12} xs={12}>
+                                <img style={style.img} src={icyimg} />
+                            </Grid>
+                            {/* <Grid item md={12} xs={12}>
+                                <img style={style.button} src={amazonimg} />
+                            </Grid> */}
                         </Grid>
-                        <Grid item md={12} xs={12}>
-                            <img style={style.button} src={amazonimg} />
-                        </Grid>
-                    </Grid>
-                </CardMedia>
-            </CardActionArea>
-        </Card>
+                    </CardMedia>
+                </CardActionArea>
+            </Card>
+        </a>
                 
     )
 }

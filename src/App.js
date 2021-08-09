@@ -12,18 +12,20 @@ function App() {
   const style = {
     background: {
       backgroundColor: "black",
-      paddingBottom: "5%",
+      paddingBottom: "0%",
       paddingLeft: "5%",
       paddingRight: "5%"
     },
     font: {
       color: "white",
-      paddingTop: "15%",
       marginLeft: "5%",
       marginRight: "5%"
     },
     poetry: {
       color: "red"
+    },
+    slider: {
+      paddingTop: "10%"
     }
   }
   return (
@@ -32,7 +34,7 @@ function App() {
         <Grid item xs="7" md="6">
           <Typography align="center" variant="h2" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
         </Grid>
-        <Grid item xs="12" md="6">
+        <Grid item xs="12" md="6" style={style.slider}>
           <Slider onChange={value => setShowPage(value)}/>
         </Grid>
       </Grid>
