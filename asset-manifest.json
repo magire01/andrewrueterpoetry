@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/andrewrueterpoetry/static/css/main.c43877e2.chunk.css",
+    "main.js": "/andrewrueterpoetry/static/js/main.6bd66a0b.chunk.js",
+    "main.js.map": "/andrewrueterpoetry/static/js/main.6bd66a0b.chunk.js.map",
+    "runtime-main.js": "/andrewrueterpoetry/static/js/runtime-main.c5f976c8.js",
+    "runtime-main.js.map": "/andrewrueterpoetry/static/js/runtime-main.c5f976c8.js.map",
+    "static/css/2.ed1298f3.chunk.css": "/andrewrueterpoetry/static/css/2.ed1298f3.chunk.css",
+    "static/js/2.5354aa7b.chunk.js": "/andrewrueterpoetry/static/js/2.5354aa7b.chunk.js",
+    "static/js/2.5354aa7b.chunk.js.map": "/andrewrueterpoetry/static/js/2.5354aa7b.chunk.js.map",
+    "static/js/3.c0e23e97.chunk.js": "/andrewrueterpoetry/static/js/3.c0e23e97.chunk.js",
+    "static/js/3.c0e23e97.chunk.js.map": "/andrewrueterpoetry/static/js/3.c0e23e97.chunk.js.map",
+    "index.html": "/andrewrueterpoetry/index.html",
+    "static/css/2.ed1298f3.chunk.css.map": "/andrewrueterpoetry/static/css/2.ed1298f3.chunk.css.map",
+    "static/css/main.c43877e2.chunk.css.map": "/andrewrueterpoetry/static/css/main.c43877e2.chunk.css.map",
+    "static/js/2.5354aa7b.chunk.js.LICENSE.txt": "/andrewrueterpoetry/static/js/2.5354aa7b.chunk.js.LICENSE.txt",
+    "static/media/amazonlogo.fe636390.png": "/andrewrueterpoetry/static/media/amazonlogo.fe636390.png",
+    "static/media/icyrueter.600e6fdc.png": "/andrewrueterpoetry/static/media/icyrueter.600e6fdc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c5f976c8.js",
+    "static/css/2.ed1298f3.chunk.css",
+    "static/js/2.5354aa7b.chunk.js",
+    "static/css/main.c43877e2.chunk.css",
+    "static/js/main.6bd66a0b.chunk.js"
+  ]
+}
