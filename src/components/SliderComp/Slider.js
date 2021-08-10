@@ -13,7 +13,7 @@ const Slider = (props) => {
   const sliderStyle = {
     height: "auto",
     width: "auto",
-    paddingBottom: "10%"
+    paddingBottom: "5%"
   }
 
   useEffect(() => {

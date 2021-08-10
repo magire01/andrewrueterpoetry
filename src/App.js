@@ -31,8 +31,10 @@ function App() {
   return (
     <div>
       <Grid container alignItems="center" justifyContent="center" style={style.background}>
-        <Grid item xs="7" md="6">
-          <Typography align="center" variant="h3" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
+        <Grid item xs="12" md="6">
+          <Typography align="center" variant="h3" centered style={style.font}>Andrew</Typography>
+          <Typography align="center" variant="h3" centered style={style.font}>Rueter</Typography>
+          <Typography align="center" variant="h3" centered style={style.poetry}>Poetry</Typography>
         </Grid>
         <Grid item xs="12" md="6" style={style.slider}>
           <Slider onChange={value => setShowPage(value)}/>
