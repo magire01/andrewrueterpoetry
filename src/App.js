@@ -14,7 +14,7 @@ function App() {
       backgroundColor: "black",
       paddingLeft: "5%",
       paddingRight: "5%",
-      height: "20%"
+      height: "30%"
     },
     font: {
       color: "white",
