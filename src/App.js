@@ -12,9 +12,9 @@ function App() {
   const style = {
     background: {
       backgroundColor: "black",
-      paddingBottom: "0%",
       paddingLeft: "5%",
-      paddingRight: "5%"
+      paddingRight: "5%",
+      height: "20%"
     },
     font: {
       color: "white",
@@ -32,7 +32,7 @@ function App() {
     <div>
       <Grid container alignItems="center" justifyContent="center" style={style.background}>
         <Grid item xs="7" md="6">
-          <Typography align="center" variant="h2" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
+          <Typography align="center" variant="h3" centered style={style.font}>Andrew Rueter <span style={style.poetry}>Poetry</span></Typography>
         </Grid>
         <Grid item xs="12" md="6" style={style.slider}>
           <Slider onChange={value => setShowPage(value)}/>

@@ -11,8 +11,9 @@ import Patreon from "./SliderItems/Patreon";
 const Slider = (props) => {
   const [sliderSelect, setSliderSelect] = useState("Home")
   const sliderStyle = {
-    height: 350,
-    width: "auto"
+    height: 300,
+    width: "auto",
+    paddingBottom: "10%"
   }
 
   useEffect(() => {
