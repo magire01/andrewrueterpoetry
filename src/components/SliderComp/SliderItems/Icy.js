@@ -9,7 +9,6 @@ const Icy = () => {
         background: {
             backgroundColor: "black",
             color: "white",
-            paddingBottom: "2%",
             height: "100%",
             width: "auto"
         },
