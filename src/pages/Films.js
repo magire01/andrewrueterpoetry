@@ -8,83 +8,77 @@ import FilmCard from '../components/FilmCard';
 
 
 const Films = (props) => {
-    const [filter, setFilter] = useState("all")
+    const [filter, setFilter] = useState("AllFilms")
 
     const style= {
         column: {
-            height: 200,
+            height: "auto",
             width: "auto"
         }
     }
-
     useEffect(() => {
-        setFilter(filter)
-    },[filter])
+        setFilter(props.filter)
+    },[])
 
     const handleChange = (e) => {
         setFilter(e.target.value)
     }
-    switch(filter){
-        case "newfilms":
-        return (
-            <Grid
+
+    if (filter == "AllFilms")
+    return(
+        <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="baseline"
+            spacing={10}
+            >
+            <Grid item md={9} xs={12}>
+                <FormControl>
+                    <Select
+                    value={filter}
+                    onChange={handleChange}
+                    inputProps={{ 'aria-label': 'Without label' }}>
+                        <MenuItem value="NewFilms">New Film Reviews</MenuItem>
+                        <MenuItem value="AllFilms">All Film Reviews</MenuItem>
+                    </Select>
+                </FormControl>
+            </Grid>
+                
+                {FilmAPI.data.map(film => (
+                    
+                    <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid>
+                    
+                ))}
+            </Grid>
+    )
+    return(
+        <Grid
             container
             direction="row"
             justifyContent="center"
             alignItems="center"
             spacing={10}
             >
-                <Grid item md={9} xs={12}>
-                    <FormControl>
-                        <Select
-                        value={filter}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'Without label' }}>
-                            <MenuItem value="newfilms">New Film Reviews</MenuItem>
-                            <MenuItem value="all">All Film Reviews</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Grid>
-                
-                {NewFilmsAPI.data.map(film => (
-                    
-                    <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid>
-                    
-                ))}
+            <Grid item md={9} xs={12}>
+                <FormControl>
+                    <Select
+                    value={filter}
+                    onChange={handleChange}
+                    inputProps={{ 'aria-label': 'Without label' }}>
+                        <MenuItem value="NewFilms">New Film Reviews</MenuItem>
+                        <MenuItem value="AllFilms">All Film Reviews</MenuItem>
+                    </Select>
+                </FormControl>
             </Grid>
-        )
-        default:
-            return (
-                <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="baseline"
-                spacing={10}
-                >
-                    <Grid item md={9} xs={12}>
-                        <FormControl>
-                            <Select
-                            value={filter}
-                            onChange={handleChange}
-                            inputProps={{ 'aria-label': 'Without label' }}>
-                                <MenuItem value="newfilms">New Film Reviews</MenuItem>
-                                <MenuItem value="all">All Film Reviews</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    
-                    {FilmAPI.data.map(film => (
-                        
-                        <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid>
-                        
-                    ))}
-                </Grid>
-            )
-    }
             
-       
-    
+            {NewFilmsAPI.data.map(film => (
+                
+                <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid>
+                
+            ))}
+        </Grid>
+    )
 }
 
 export default Films;

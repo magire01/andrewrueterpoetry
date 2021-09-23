@@ -11,27 +11,34 @@ import Contact from "./pages/Contact";
 
 function App() {
 
+//Page Select Strings
   const page = {
     allPoems: "AllPoems",
     featuredPoems: "FeaturedPoems",
     allFilms: "AllFilms",
-    featuredFilms: "FeaturedFilms",
+    newFilms: "NewFilms",
     contact: "Contact"
   }
+//Page State
+  const [showPage, setShowPage] = useState(page.allPoems);
 
-  const [showPage, setShowPage ] = useState("AllPoems");
-
+//Render Page
   const getPage = () => {
     switch(showPage) {
       case "AllFilms":
-        return <Films />
+        return <Films filter={showPage}/>
+      case "NewFilms":
+        return <Films filter={showPage} />
+      case "FeaturedPoems":
+        return <Poems filter={showPage} />
       case "Contact":
         return <Contact />
       default:
-        return <Poems />
+        return <Poems filter={showPage}/>
     }
   }
 
+//Style for active buttons
   const style = {
     active: {
         color: "red"
@@ -41,11 +48,9 @@ function App() {
     }
   }
 
-  
-
   return (
     <div>
-      {/* Banner Section */}
+{/* Banner Section */}
       <Grid container direction="row" alignItems="center" justifyContent="center" className={"banner"}>
         <Grid item xs="12" md="6">
           <Typography align="center" variant="h3" centered className={"bannerFont"}>Andrew</Typography>
@@ -56,16 +61,16 @@ function App() {
           <Slider />
         </Grid>
       </Grid>
-      {/* Nav Section */}
+{/* Nav Section */}
       <Paper>
         <Tabs centered>
-          <Tab label="Poems" onClick={() => setShowPage("AllPoems")} style={(showPage == "AllPoems") ? style.active : style.inactive} />
-          <Tab label="Films" onClick={() => setShowPage(page.allFilms)} style={(showPage == page.allFilms) ? style.active : style.inactive} />
-          <Tab label="Contact" onClick={() => setShowPage(page.contact)} style={(showPage == page.contact) ? style.active : style.inactive} />
+          <Tab label="Poems" onClick={() => setShowPage(page.allPoems)} style={(showPage === page.allPoems || showPage === page.featuredPoems) ? style.active : style.inactive} />
+          <Tab label="Films" onClick={() => setShowPage(page.allFilms)} style={(showPage === page.allFilms || showPage === page.newFilms) ? style.active : style.inactive} />
+          <Tab label="Contact" onClick={() => setShowPage(page.contact)} style={(showPage === page.contact) ? style.active : style.inactive} />
         </Tabs>
       </Paper>
+{/* Body Section */}
       <Container>
-      {/* Body Section */}
         {getPage()}
       </Container>
     </div>

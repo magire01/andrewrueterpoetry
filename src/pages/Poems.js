@@ -9,7 +9,7 @@ import PoemCard from '../components/PoemCard';
 
 const Poems = (props) => {
 
-    const [filter, setFilter] = useState("all")
+    const [filter, setFilter] = useState("AllPoems")
 
     const style= {
         column: {
@@ -18,66 +18,63 @@ const Poems = (props) => {
         }
     }
     useEffect(() => {
-        setFilter(filter)
-    },[filter])
+        setFilter(props.filter)
+    },[])
 
     const handleChange = (e) => {
         setFilter(e.target.value)
     }
 
-    switch(filter){
-    case "featuredpoems":
-        return (
-            <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                spacing={10}
-                >
-                <Grid item md={9} xs={12}>
-                    <FormControl>
-                        <Select
-                        value={filter}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'Without label' }}>
-                            <MenuItem value="featuredpoems">Featured Poems</MenuItem>
-                            <MenuItem value="all">All Poems</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Grid>
-                {FeaturePoemAPI.data.map(film => (
-                <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
-                    ))}
+    if (filter == "AllPoems")
+    return (
+        <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={10}
+            >
+            <Grid item md={9} xs={12}>
+                <FormControl>
+                    <Select
+                    value={filter}
+                    onChange={handleChange}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Without label' }}>
+                        <MenuItem value="FeaturedPoems">Featured Poems</MenuItem>
+                        <MenuItem value="AllPoems">All Poems</MenuItem>
+                    </Select>
+                </FormControl>
             </Grid>
-        )
-    default:
-        return (
-            <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                spacing={10}
-                >
-                <Grid item md={9} xs={12}>
-                    <FormControl>
-                        <Select
-                        value={filter}
-                        onChange={handleChange}
-                        displayEmpty
-                        inputProps={{ 'aria-label': 'Without label' }}>
-                            <MenuItem value="featuredpoems">Featured Poems</MenuItem>
-                            <MenuItem value="all">All Poems</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Grid>
-                {PoemAPI.data.map(film => (
-                <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
-                    ))}
+            {PoemAPI.data.map(film => (
+            <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
+                ))}
+        </Grid>
+    )
+    return (
+        <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={10}
+            >
+            <Grid item md={9} xs={12}>
+                <FormControl>
+                    <Select
+                    value={filter}
+                    onChange={handleChange}
+                    inputProps={{ 'aria-label': 'Without label' }}>
+                        <MenuItem value="FeaturedPoems">Featured Poems</MenuItem>
+                        <MenuItem value="AllPoems">All Poems</MenuItem>
+                    </Select>
+                </FormControl>
             </Grid>
-        )
-    }
+            {FeaturePoemAPI.data.map(film => (
+            <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
+                ))}
+        </Grid>
+    )
 }
 
 export default Poems;
