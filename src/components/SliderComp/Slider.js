@@ -8,20 +8,12 @@ import NewFilms from './SliderItems/NewFilms';
 import Icy from './SliderItems/Icy';
 import Patreon from "./SliderItems/Patreon";
 
-const Slider = (props) => {
-  const [sliderSelect, setSliderSelect] = useState("Home")
+const Slider = () => {
   const sliderStyle = {
     height: "auto",
     width: "auto",
     paddingBottom: "5%"
   }
-
-  useEffect(() => {
-    props.onChange(sliderSelect)
-
-  }, [sliderSelect])
-
-
 
   return (
     <div className="carousel-outer">
