@@ -25,13 +25,13 @@ function App() {
 //Render Page
   const getPage = () => {
     switch(showPage) {
-      case "AllFilms":
+      case page.allFilms:
         return <Films filter={showPage}/>
-      case "NewFilms":
+      case page.newFilms:
         return <Films filter={showPage} />
-      case "FeaturedPoems":
+      case page.featuredPoems:
         return <Poems filter={showPage} />
-      case "Contact":
+      case page.contact:
         return <Contact />
       default:
         return <Poems filter={showPage}/>

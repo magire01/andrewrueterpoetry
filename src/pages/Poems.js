@@ -24,8 +24,6 @@ const Poems = (props) => {
     const handleChange = (e) => {
         setFilter(e.target.value)
     }
-
-    if (filter == "AllPoems")
     return (
         <Grid
             container
@@ -46,33 +44,13 @@ const Poems = (props) => {
                     </Select>
                 </FormControl>
             </Grid>
-            {PoemAPI.data.map(film => (
-            <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
-                ))}
-        </Grid>
-    )
-    return (
-        <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            spacing={10}
-            >
-            <Grid item md={9} xs={12}>
-                <FormControl>
-                    <Select
-                    value={filter}
-                    onChange={handleChange}
-                    inputProps={{ 'aria-label': 'Without label' }}>
-                        <MenuItem value="FeaturedPoems">Featured Poems</MenuItem>
-                        <MenuItem value="AllPoems">All Poems</MenuItem>
-                    </Select>
-                </FormControl>
-            </Grid>
-            {FeaturePoemAPI.data.map(film => (
-            <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
-                ))}
+            {(filter === "AllPoems")
+            ? PoemAPI.data.map(film => (
+                <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
+                    ))
+            : FeaturePoemAPI.data.map(film => (
+                <Grid item md={9} xs={12} style={style.column}><PoemCard info={film} text={nl2br(film.text)}/></Grid>
+                    ))}
         </Grid>
     )
 }

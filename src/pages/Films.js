@@ -24,7 +24,6 @@ const Films = (props) => {
         setFilter(e.target.value)
     }
 
-    if (filter == "AllFilms")
     return(
         <Grid
             container
@@ -44,38 +43,12 @@ const Films = (props) => {
                     </Select>
                 </FormControl>
             </Grid>
-                
-                {FilmAPI.data.map(film => (
-                    
-                    <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid>
-                    
-                ))}
-            </Grid>
-    )
-    return(
-        <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            spacing={10}
-            >
-            <Grid item md={9} xs={12}>
-                <FormControl>
-                    <Select
-                    value={filter}
-                    onChange={handleChange}
-                    inputProps={{ 'aria-label': 'Without label' }}>
-                        <MenuItem value="NewFilms">New Film Reviews</MenuItem>
-                        <MenuItem value="AllFilms">All Film Reviews</MenuItem>
-                    </Select>
-                </FormControl>
-            </Grid>
-            
-            {NewFilmsAPI.data.map(film => (
-                
+            {(filter === "AllFilms")
+            ? FilmAPI.data.map(film => (    
+                <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid> 
+                ))
+            : NewFilmsAPI.data.map(film => (    
                 <Grid item md={4} xs={12} style={style.column}><FilmCard info={film} /></Grid>
-                
             ))}
         </Grid>
     )
