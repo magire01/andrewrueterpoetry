@@ -1,6 +1,14 @@
 import React, { useState } from "react";
+import ShareIcon from '@material-ui/icons/Share'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
-import { Grid, Card, CardActionArea, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, useMediaQuery, useTheme } from "@material-ui/core";
+import { Grid, Card, CardActionArea, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, useMediaQuery, useTheme, IconButton } from "@material-ui/core";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 const PoemCard = (props) => {
 
@@ -19,6 +27,7 @@ const PoemCard = (props) => {
     
     const handleClose = () => {
         setShowPoem({ ...showPoem, open: false });
+        window.history.replaceState(null, "Andrew Rueter Poetry", "/");
     };
 
     const handleExpand = () => {
@@ -38,20 +47,21 @@ const PoemCard = (props) => {
         },
         cardLong: {
             height: 200,
-            width: "90%",
+            width: "auto",
             border: "none",
             boxShadow: "none"
         },
         entry: {
-            width: "auto",
+            width: 200,
             height: "auto",
             border: "none",
             boxShadow: "none",
-            width: "auto",
-            height: "auto"
         },
         continue: {
             color: "red"
+        },
+        poemText: {
+            fontSize: 10
         }
     }
 
@@ -59,70 +69,90 @@ const PoemCard = (props) => {
 
     if (poemLength > 150)
     return (
-        <>
-            <Card style={style.entry}>
-                <CardActionArea onClick={handleOpen}>
-                    <Typography variant="h4">{props.info.title}</Typography>
-                    <Card style={!showPoem.expand ? style.cardLong : style.card}>
-                        <Typography>{props.text}</Typography>
-                    </Card>
-                </CardActionArea>
-            </Card>
+        <Router>
+            <Link to={`/poem/${props.info.title.split(" ").join("-")}`} style={{ textDecoration: "none" }}>
+                <Card style={style.entry}>
+                    <CardActionArea onClick={handleOpen}>
+                        <Typography variant="h4">{props.info.title}</Typography>
+                        <Card style={!showPoem.expand ? style.cardLong : style.card}>
+                            <Typography style={style.poemText}>{props.text}</Typography>
+                        </Card>
+                    </CardActionArea>
+                </Card>
+            </Link>
+            
             {!showPoem.expand ? <Button onClick={handleExpand}style={style.continue}>Continue Reading</Button> : <Button onClick={handleCollapse} style={style.continue}>Collapse</Button>}
-            <Dialog
+            <Route path={`/poem/${props.info.title.split(" ").join("-")}`}>
+                <Dialog
                 fullScreen={fullScreen}
                 open={showPoem.open}
                 onClose={handleClose}
                 aria-labelledby="responsive-dialog-title"
+                style={style.entry}
                 >
                 <DialogTitle id="responsive-dialog-title">{props.info.title}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        <Typography>{props.text}</Typography>
+                        <Typography style={style.poemText}>{props.text}</Typography>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Grid container alignItems="right">
-                        <Button onClick={handleClose} color="primary" autoFocus>
-                            Back
-                        </Button>
+                
+                    <Grid container alignItems="center" justifyContent="space-between">
+                        <Grid item>
+                            <IconButton onClick={handleClose}>
+                                <ArrowBackIcon color="primary" autoFocus/>
+                            </IconButton>
+                        </Grid>
+                        <Grid item style={{ backgroundColor: "gray", color: "white"}}>
+                            <IconButton>
+                                <ShareIcon />
+                            </IconButton>
+                        </Grid>
                     </Grid>
                 </DialogActions>
             </Dialog>
-        </>
+            </Route>
+        </Router>
     )
 
     return (
-        <>
-            <Card style={style.entry} onClick={handleOpen}>
-                <CardActionArea>
-                    <Typography variant="h4">{props.info.title}</Typography>
-                    <Card style={style.card}>
-                        <Typography>{props.text}</Typography>
-                    </Card>
-                </CardActionArea>
-            </Card>
-            <Dialog
-                fullScreen={fullScreen}
-                open={showPoem.open}
-                onClose={handleClose}
-                aria-labelledby="responsive-dialog-title"
-                >
-                <DialogTitle id="responsive-dialog-title">{props.info.title}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        <Typography>{props.text}</Typography>
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Grid container alignItems="right">
-                        <Button onClick={handleClose} color="primary" autoFocus>
-                            Back
-                        </Button>
-                    </Grid>
-                </DialogActions>
-            </Dialog>
-        </>
+        <Router>
+            <Link to={`/poem/${props.info.title.split(" ").join("-")}`} style={{ textDecoration: "none" }}>
+                <Card style={style.entry} onClick={handleOpen}>
+                    <CardActionArea>
+                        <Typography variant="h4">{props.info.title}</Typography>
+                        <Card style={style.card}>
+                            <Typography style={style.poemText}>{props.text}</Typography>
+                        </Card>
+                    </CardActionArea>
+                </Card>    
+            </Link>
+        
+            <Route path={`/poem/${props.info.title.split(" ").join("-")}`}>
+                <Dialog
+                    fullScreen={fullScreen}
+                    open={showPoem.open}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                    style={style.entry}
+                    >
+                    <DialogTitle id="responsive-dialog-title">{props.info.title}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            <Typography style={style.poemText}>{props.text}</Typography>
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Grid container alignItems="right">
+                            <Button onClick={handleClose} color="primary" autoFocus>
+                                Back
+                            </Button>
+                        </Grid>
+                    </DialogActions>
+                </Dialog>
+            </Route>
+        </Router>
     )
 }
 

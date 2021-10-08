@@ -6,7 +6,7 @@ import NewFilmsAPI from "../utilities/newfilms.json";
 
 import FilmCard from '../components/FilmCard';
 
-
+//TODO: add explanation to top of films page
 const Films = (props) => {
     const [filter, setFilter] = useState("AllFilms")
 
