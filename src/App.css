@@ -14,16 +14,15 @@
   and (max-device-width: 2000px) {
   .banner {
     background-color: black;
-    height: 700px;
+    height: 400px;
     padding-top: 50px;
   }
   .bannerFont {
     color: white;
-    margin: 50px;
+    padding-bottom: 20px;
   }
   .bannerFontPoetry {
     color: red;
-    margin: 50px;
   }
   .bannerSlider {
     padding-top: 50px
@@ -38,11 +37,9 @@
   }
   .bannerFont {
     color: white;
-    margin: 20px;
   }
   .bannerFontPoetry {
     color: red;
-    margin: 20px;
   }
   .bannerSlider {
     padding-top: 20px

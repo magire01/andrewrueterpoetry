@@ -55,6 +55,12 @@ const PoemCard = (props) => {
             border: "none",
             boxShadow: "none"
         },
+        cardShort: {
+            height: 100,
+            width: "100%",
+            border: "none",
+            boxShadow: "none"
+        },
         cardLong: {
             height: "auto",
             width: "100%",
@@ -133,7 +139,7 @@ const PoemCard = (props) => {
                 <Card style={style.entry} onClick={handleOpen}>
                     <CardActionArea>
                         <Typography variant="h4">{props.info.title}</Typography>
-                        <Card style={style.card}>
+                        <Card style={style.cardShort}>
                             <Typography style={style.poemText}>{props.text}</Typography>
                         </Card>
                     </CardActionArea>
@@ -146,7 +152,6 @@ const PoemCard = (props) => {
                     open={showPoem.open}
                     onClose={handleClose}
                     aria-labelledby="responsive-dialog-title"
-                    style={style.entry}
                     >
                     <DialogTitle id="responsive-dialog-title">{props.info.title}</DialogTitle>
                     <DialogContent>

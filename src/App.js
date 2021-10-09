@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 
 import Slider from "./components/SliderComp/Slider";
@@ -10,6 +10,16 @@ import Contact from "./pages/Contact";
 
 
 function App() {
+
+  //Nav Rendering for Smartphone vs Laptop
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 1400);
+  const updateMedia = () => {
+      setDesktop(window.innerWidth > 1000);
+  };
+  useEffect(() => {
+      window.addEventListener("resize", updateMedia);
+      return () => window.removeEventListener("resize", updateMedia);
+  });
 
 //Page Select Strings
   const page = {
@@ -52,12 +62,10 @@ function App() {
     <div>
 {/* Banner Section */}
       <Grid container direction="row" alignItems="center" justifyContent="center" className={"banner"}>
-        <Grid item xs="12" md="6">
-          <Typography align="center" variant="h3" centered className={"bannerFont"}>Andrew</Typography>
-          <Typography align="center" variant="h3" centered className={"bannerFont"}>Rueter</Typography>
-          <Typography align="center" variant="h3" centered className={"bannerFontPoetry"}>Poetry</Typography>
+        <Grid item xs="12" md="8">
+          <Typography align="center" variant={(!isDesktop) ? "h3" : "h1"} centered className={"bannerFont"}>Andrew Rueter <span className={"bannerFontPoetry"}>Poetry</span></Typography>
         </Grid>
-        <Grid item xs="12" md="6" className={"bannerSlider"}>
+        <Grid item xs="12" md="4" className={"bannerSlider"}>
           <Slider />
         </Grid>
       </Grid>
