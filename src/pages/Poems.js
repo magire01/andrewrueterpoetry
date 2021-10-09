@@ -13,12 +13,7 @@ const Poems = (props) => {
 
     const [filter, setFilter] = useState("AllPoems")
 
-    const style= {
-        column: {
-            height: "auto",
-            width: 400
-        }
-    }
+    
     useEffect(() => {
         setFilter(props.filter)
     },[])
@@ -32,13 +27,23 @@ const Poems = (props) => {
     const handleChange = (e) => {
         setFilter(e.target.value)
     }
+    const style= {
+        column: {
+            height: "auto",
+            width: 300,
+            margin: "50px 0px 50px 0px"
+        },
+        dropdown: {
+            marginTop: 20
+        }
+    }
+
     return (
         <Grid
             container
             direction="row"
             justifyContent="center"
             alignItems="center"
-            spacing={10}
             >
             <Grid item md={9} xs={12}>
                 <FormControl>
@@ -46,7 +51,9 @@ const Poems = (props) => {
                     value={filter}
                     onChange={handleChange}
                     displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}>
+                    inputProps={{ 'aria-label': 'Without label' }}
+                    style={style.dropdown}
+                    >
                         <MenuItem value="FeaturedPoems">Featured Poems</MenuItem>
                         <MenuItem value="AllPoems">All Poems</MenuItem>
                     </Select>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ShareIcon from '@material-ui/icons/Share'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
@@ -37,17 +37,27 @@ const PoemCard = (props) => {
     const handleCollapse = () => {
         setShowPoem({ ...showPoem, expand: false });
     }
+
+    //Nav Rendering for Smartphone vs Laptop
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 1400);
+    const updateMedia = () => {
+        setDesktop(window.innerWidth > 1000);
+    };
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
     
     const style = {
         card: {
             height: "auto",
-            width: "90%",
+            width: "100%",
             border: "none",
             boxShadow: "none"
         },
         cardLong: {
             height: 200,
-            width: "auto",
+            width: "100%",
             border: "none",
             boxShadow: "none"
         },
@@ -61,7 +71,7 @@ const PoemCard = (props) => {
             color: "red"
         },
         poemText: {
-            fontSize: 10
+            fontSize: (!isDesktop) ? 13 : 15
         }
     }
 

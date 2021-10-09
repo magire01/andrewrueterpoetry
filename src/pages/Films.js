@@ -10,18 +10,24 @@ import FilmCard from '../components/FilmCard';
 const Films = (props) => {
     const [filter, setFilter] = useState("AllFilms")
 
-    const style= {
-        column: {
-            height: "auto",
-            width: "auto"
-        }
-    }
     useEffect(() => {
         setFilter(props.filter)
     },[])
 
     const handleChange = (e) => {
         setFilter(e.target.value)
+    }
+    
+    const style= {
+        column: {
+            height: "auto",
+            width: "auto",
+            margin: "20px 0px 20px 0px"
+        },
+        dropdown: {
+            marginTop: 20,
+            marginBottom: 20
+        }
     }
 
     return(
@@ -30,14 +36,14 @@ const Films = (props) => {
             direction="row"
             justifyContent="center"
             alignItems="baseline"
-            spacing={10}
             >
             <Grid item md={9} xs={12}>
                 <FormControl>
                     <Select
                     value={filter}
                     onChange={handleChange}
-                    inputProps={{ 'aria-label': 'Without label' }}>
+                    inputProps={{ 'aria-label': 'Without label' }}
+                    style={style.dropdown}>
                         <MenuItem value="NewFilms">New Film Reviews</MenuItem>
                         <MenuItem value="AllFilms">All Film Reviews</MenuItem>
                     </Select>
