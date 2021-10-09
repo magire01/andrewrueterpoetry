@@ -29,8 +29,6 @@ const Poems = (props) => {
     }
     const style= {
         column: {
-            height: "auto",
-            width: 300,
             margin: "50px 0px 50px 0px"
         },
         dropdown: {

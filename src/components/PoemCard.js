@@ -50,20 +50,19 @@ const PoemCard = (props) => {
     
     const style = {
         card: {
-            height: "auto",
-            width: "100%",
-            border: "none",
-            boxShadow: "none"
-        },
-        cardLong: {
             height: 200,
             width: "100%",
             border: "none",
             boxShadow: "none"
         },
-        entry: {
-            width: 200,
+        cardLong: {
             height: "auto",
+            width: "100%",
+            border: "none",
+            boxShadow: "none"
+        },
+        entry: {
+            width: "auto",
             border: "none",
             boxShadow: "none",
         },
@@ -76,22 +75,24 @@ const PoemCard = (props) => {
     }
 
     const poemLength = props.info.text.length;
-
-    if (poemLength > 150)
+    if (poemLength > 200)
     return (
         <Router>
             <Link to={`/poem/${props.info.title.split(" ").join("-")}`} style={{ textDecoration: "none" }}>
                 <Card style={style.entry}>
                     <CardActionArea onClick={handleOpen}>
                         <Typography variant="h4">{props.info.title}</Typography>
-                        <Card style={!showPoem.expand ? style.cardLong : style.card}>
+                        <Card style={!showPoem.expand ? style.card : style.cardLong}>
                             <Typography style={style.poemText}>{props.text}</Typography>
                         </Card>
                     </CardActionArea>
                 </Card>
-            </Link>
             
-            {!showPoem.expand ? <Button onClick={handleExpand}style={style.continue}>Continue Reading</Button> : <Button onClick={handleCollapse} style={style.continue}>Collapse</Button>}
+            </Link>
+            {(!showPoem.expand)
+            ? <Button onClick={handleExpand}style={style.continue}>Continue Reading</Button> 
+            : <Button onClick={handleCollapse} style={style.continue}>Collapse</Button>}
+            
             <Route path={`/poem/${props.info.title.split(" ").join("-")}`}>
                 <Dialog
                 fullScreen={fullScreen}
