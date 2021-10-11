@@ -31,7 +31,7 @@ const FilmCard = (props) => {
     <Card onClick={handleClickOpen} style={style.card}>
         <CardActionArea>
             <CardMedia>
-                <img src={props.info.img} style={style.img}/>
+                <img src={props.info.image} style={style.img}/>
                 <Typography variant="subtitle1"> {props.info.title} </Typography>
             </CardMedia>
         </CardActionArea>
