@@ -33,7 +33,7 @@
   and (max-device-width: 500px) {
   .banner {
     background-color: black;
-    height: 500px;
+    height: 400px;
   }
   .bannerFont {
     color: white;
@@ -42,7 +42,7 @@
     color: red;
   }
   .bannerSlider {
-    padding-top: 20px
+    padding-top: 0px
   }
 }
 

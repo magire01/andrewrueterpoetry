@@ -63,7 +63,7 @@ function App() {
 {/* Banner Section */}
       <Grid container direction="row" alignItems="center" justifyContent="center" className={"banner"}>
         <Grid item xs="12" md="8">
-          <Typography align="center" variant={(!isDesktop) ? "h3" : "h1"} centered className={"bannerFont"}>Andrew Rueter <span className={"bannerFontPoetry"}>Poetry</span></Typography>
+          <Typography align="center" variant={(!isDesktop) ? "h4" : "h1"} centered className={"bannerFont"}>Andrew Rueter <span className={"bannerFontPoetry"}>Poetry</span></Typography>
         </Grid>
         <Grid item xs="12" md="4" className={"bannerSlider"}>
           <Slider />

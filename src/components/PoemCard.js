@@ -56,7 +56,7 @@ const PoemCard = (props) => {
             boxShadow: "none"
         },
         cardShort: {
-            height: 100,
+            height: "auto",
             width: "100%",
             border: "none",
             boxShadow: "none"
@@ -76,7 +76,14 @@ const PoemCard = (props) => {
             color: "red"
         },
         poemText: {
-            fontSize: (!isDesktop) ? 13 : 15
+            fontSize: (!isDesktop) ? 13 : 18
+        },
+        poemTitle: {
+            margin: "10px 0px 10px 0px"
+        },
+        poemSubtitle: {
+            margin: "0px 0px 10px 0px",
+            fontStyle: "italic"
         }
     }
 
@@ -87,13 +94,13 @@ const PoemCard = (props) => {
             <Link to={`/poem/${props.info.title.split(" ").join("-")}`} style={{ textDecoration: "none" }}>
                 <Card style={style.entry}>
                     <CardActionArea onClick={handleOpen}>
-                        <Typography variant="h4">{props.info.title}</Typography>
+                        <Typography variant={(!isDesktop) ? "h5" : "h4"} style={style.poemTitle}>{props.info.title}</Typography>
+                        <Typography variant="subtitle2" style={style.poemSubtitle}>{props.info.datePosted}</Typography>
                         <Card style={!showPoem.expand ? style.card : style.cardLong}>
                             <Typography style={style.poemText}>{props.text}</Typography>
                         </Card>
                     </CardActionArea>
                 </Card>
-            
             </Link>
             {(!showPoem.expand)
             ? <Button onClick={handleExpand}style={style.continue}>Continue Reading</Button> 
@@ -107,24 +114,26 @@ const PoemCard = (props) => {
                 aria-labelledby="responsive-dialog-title"
                 style={style.entry}
                 >
-                <DialogTitle id="responsive-dialog-title">{props.info.title}</DialogTitle>
+                <DialogTitle id="responsive-dialog-title">
+                    <IconButton onClick={handleClose}>
+                        <ArrowBackIcon color="primary" autoFocus/>
+                    </IconButton>
+                    {props.info.title}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         <Typography style={style.poemText}>{props.text}</Typography>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                
-                    <Grid container alignItems="center" justifyContent="space-between">
-                        <Grid item>
-                            <IconButton onClick={handleClose}>
-                                <ArrowBackIcon color="primary" autoFocus/>
-                            </IconButton>
+                    <Grid container alignItems="center" justifyContent="space-between" style={{ backgroundColor: "gray", color: "white", textAlign: "center"}}>
+                        <Grid item md={6} xs={6}>
+                            <Typography>Andrew Rueter</Typography>
                         </Grid>
-                        <Grid item style={{ backgroundColor: "gray", color: "white"}}>
-                            <IconButton>
-                                <ShareIcon />
-                            </IconButton>
+                        <Grid item md={6} xs={6}>
+                            <Typography>{props.info.datePosted}</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography>Additional info</Typography>
                         </Grid>
                     </Grid>
                 </DialogActions>
@@ -138,7 +147,8 @@ const PoemCard = (props) => {
             <Link to={`/poem/${props.info.title.split(" ").join("-")}`} style={{ textDecoration: "none" }}>
                 <Card style={style.entry} onClick={handleOpen}>
                     <CardActionArea>
-                        <Typography variant="h4">{props.info.title}</Typography>
+                        <Typography variant={(!isDesktop) ? "h5" : "h4"} style={style.poemTitle}>{props.info.title}</Typography>
+                        <Typography variant="subtitle2" style={style.poemSubtitle}>{props.info.datePosted}</Typography>
                         <Card style={style.cardShort}>
                             <Typography style={style.poemText}>{props.text}</Typography>
                         </Card>
@@ -153,18 +163,29 @@ const PoemCard = (props) => {
                     onClose={handleClose}
                     aria-labelledby="responsive-dialog-title"
                     >
-                    <DialogTitle id="responsive-dialog-title">{props.info.title}</DialogTitle>
+                    <DialogTitle id="responsive-dialog-title">
+                        <IconButton onClick={handleClose}>
+                            <ArrowBackIcon color="primary" autoFocus/>
+                        </IconButton>
+                        {props.info.title}
+                    </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
                             <Typography style={style.poemText}>{props.text}</Typography>
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Grid container alignItems="right">
-                            <Button onClick={handleClose} color="primary" autoFocus>
-                                Back
-                            </Button>
+                    <Grid container alignItems="center" justifyContent="space-between" style={{ backgroundColor: "gray", color: "white", textAlign: "center"}}>
+                        <Grid item md={6} xs={6}>
+                            <Typography>Andrew Rueter</Typography>
                         </Grid>
+                        <Grid item md={6} xs={6}>
+                            <Typography>{props.info.datePosted}</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography>Additional info</Typography>
+                        </Grid>
+                    </Grid>
                     </DialogActions>
                 </Dialog>
             </Route>
